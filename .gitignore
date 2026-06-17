@@ -1,0 +1,7 @@
+.env
+*.env
+*.pat
+*.token
+.DS_Store
+Thumbs.db
+desktop.ini
