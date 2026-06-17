@@ -5,7 +5,7 @@ description: The non-negotiable engineering principles for building any software
 
 # Engineering Constitution
 
-These fourteen rules apply to every file in every project, every time. They are
+These fifteen rules apply to every file in every project, every time. They are
 the baseline. Reference modules expand on them; nothing overrides them.
 
 1. **One architecture — the spine.** Layered, with dependencies pointing inward:
@@ -67,3 +67,11 @@ the baseline. Reference modules expand on them; nothing overrides them.
 14. **Declare your boundaries.** Write the assumptions and out-of-scope items down
     (single-writer, no auth yet, single machine) so they are known, not discovered
     the day reality changes.
+
+15. **The gate is an artifact, not a promise.** Every rule that can be checked
+    mechanically is wired into a committed, runnable gate — a conformance script,
+    a CI run, a local hook — that executes where the builder cannot skip it or
+    self-attest past it. Conformance is proven by the gate going green, never by a
+    report that says it did. A rule enforced only by self-report is not enforced;
+    and you fix the code to satisfy the gate, never weaken the gate to pass it.
+    (See module 08.)

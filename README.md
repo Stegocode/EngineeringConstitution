@@ -1,6 +1,6 @@
 # Engineering Constitution
 
-A project-agnostic engineering standard — a constitution and seven reference modules — designed to be loaded into Claude Code at build time. The constitution is the baseline; the modules expand on it one concern at a time.
+A project-agnostic engineering standard — a constitution and eight reference modules — designed to be loaded into Claude Code at build time. The constitution is the baseline; the modules expand on it one concern at a time.
 
 ## The framework
 
@@ -14,6 +14,7 @@ A project-agnostic engineering standard — a constitution and seven reference m
 | `05-observability-telemetry-and-debt.md` | Structured logging, operational counters, audit trails, debt ledger | Adding logging or metrics, or deferring a fix |
 | `06-testing-and-verification.md` | Deterministic tests, testable seams, PASS/PARTIAL/KILL criteria, reporting gaps | Writing tests or any batch/sync job |
 | `07-build-process.md` | New-project checklist and hardening pass for existing projects | Starting a build or bringing one up to standard |
+| `08-enforcement-and-ci.md` | Committed gates that run every other module's rules mechanically — conformance script, CI pipeline, local hooks, architecture contract, secret scan | Standing up a new project skeleton, wiring a rule into a gate, or verifying a build was actually proven |
 
 Each file also ships as a Claude Code skill under `skills/<name>/SKILL.md` — same content, packaged for `@import`.
 
@@ -54,12 +55,13 @@ All available skills — add any or all:
 @import C:\path\to\EngineeringConstitution\skills\build-process\SKILL.md
 @import C:\path\to\EngineeringConstitution\skills\configuration-and-environment\SKILL.md
 @import C:\path\to\EngineeringConstitution\skills\data-and-schema\SKILL.md
+@import C:\path\to\EngineeringConstitution\skills\enforcement-and-ci\SKILL.md
 @import C:\path\to\EngineeringConstitution\skills\observability-telemetry-and-debt\SKILL.md
 @import C:\path\to\EngineeringConstitution\skills\safety-and-correctness\SKILL.md
 @import C:\path\to\EngineeringConstitution\skills\testing-and-verification\SKILL.md
 ```
 
-Load the constitution always. Load skills on demand — the one or two relevant to the work in progress, not all seven at once.
+Load the constitution always. Load skills on demand — the one or two relevant to the work in progress, not all eight at once.
 
 ---
 
